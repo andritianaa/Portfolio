@@ -42,13 +42,14 @@
 .service-item.stat {
   padding: 0;
   background: none;
-box-shadow: none;
+  box-shadow: none;
 }
 
 .service-item.stat img {
   width: 90%;
 
 }
+
 *,
 *::before,
 *::after {
@@ -1767,6 +1768,8 @@ textarea.form-input::-webkit-resizer {
 
 .service-item.stat {
   padding: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 input {
