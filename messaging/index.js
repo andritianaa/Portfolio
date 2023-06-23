@@ -21,7 +21,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(cors({ origin: 'https://andritiana.tech' }))
 
-app.post('/messages', async (req, res) => {
+app.post('/', async (req, res) => {
     console.log(req.body)
     try {
         const { fullname, email, message } = req.body
@@ -30,7 +30,7 @@ app.post('/messages', async (req, res) => {
     } catch (error) { res.status(500).send('Erreur lors de l\'enregistrement du message.') }
 })
 
-app.get('/messages', async (req, res) => {
+app.get('/', async (req, res) => {
     try { res.render('messages', { messages: await Message.find().sort({ date: -1 }) }) }
     catch (error) { res.status(500).send('Erreur lors de la requête du message.') }
 
