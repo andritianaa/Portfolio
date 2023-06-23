@@ -157,29 +157,3 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
-
-document.querySelector('[data-form]').addEventListener('submit', function (event) {
-  event.preventDefault();
-
-  var fullname = document.querySelector('[name="fullname"]').value;
-  var email = document.querySelector('[name="_replyto"]').value;
-  var message = document.querySelector('[name="message"]').value;
-
-  var subject = "Message de " + encodeURIComponent(fullname);
-  var body = encodeURIComponent(message);
-
-  var mailtoLink = "mailto:pro@andritiana.tech?subject=" + subject + "&body=" + body;
-  var emailAppLink = "";
-
-  // Vérifier si une application de messagerie spécifique est installée sur l'appareil
-  if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
-    emailAppLink = "message://";
-  } else if (navigator.userAgent.match(/android/i)) {
-    emailAppLink = "mailto:";
-  } else {
-    emailAppLink = "mailto:";
-  }
-
-  // Ouvrir l'application de messagerie
-  window.location.href = emailAppLink + mailtoLink;
-});
