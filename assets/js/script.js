@@ -159,23 +159,34 @@ for (let i = 0; i < navigationLinks.length; i++) {
 }
 
 
-function redirectToEmail(event) {
-  event.preventDefault(); // Empêcher l'envoi du formulaire par défaut
+function submitForm(event) {
+  event.preventDefault(); // Empêche la soumission du formulaire par défaut
 
-  // Récupérer les valeurs du formulaire
-  const fullName = document.querySelector('input[name="fullname"]').value;
-  const email = document.querySelector('input[name="email"]').value;
-  const message = document.querySelector('textarea[name="message"]').value;
+  const form = document.getElementById('contactForm');
+  const formData = new FormData(form);
 
-  // Construire le lien de redirection vers le compte e-mail
-  const subject = encodeURIComponent('Nouveau message depuis le formulaire');
-  const body = encodeURIComponent(`
-    Nom complet : ${fullName}
-    Adresse e-mail : ${email}
-    Message : ${message}
-  `);
-  const mailtoLink = `mailto:${email}?subject=${subject}&body=${body}`;
+  // Construction de l'objet de données à envoyer
+  const data = {
+    fullname: formData.get('fullname'),
+    email: formData.get('email'),
+    message: formData.get('message')
+  };
 
-  // Rediriger l'utilisateur vers le lien de messagerie
-  window.location.href = mailtoLink;
+  // Envoi de la requête POST à l'API
+  fetch('http://localhost:3000/messages', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  })
+    .then(response => response.json())
+    .then(result => {
+      // Redirection ou traitement de la réponse de l'API
+      console.log(result);
+    })
+    .catch(error => {
+      // Gestion des erreurs
+      console.error(error);
+    });
 }
