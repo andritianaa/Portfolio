@@ -157,3 +157,25 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+
+function redirectToEmail(event) {
+  event.preventDefault(); // Empêcher l'envoi du formulaire par défaut
+
+  // Récupérer les valeurs du formulaire
+  const fullName = document.querySelector('input[name="fullname"]').value;
+  const email = document.querySelector('input[name="email"]').value;
+  const message = document.querySelector('textarea[name="message"]').value;
+
+  // Construire le lien de redirection vers le compte e-mail
+  const subject = encodeURIComponent('Nouveau message depuis le formulaire');
+  const body = encodeURIComponent(`
+    Nom complet : ${fullName}
+    Adresse e-mail : ${email}
+    Message : ${message}
+  `);
+  const mailtoLink = `mailto:${email}?subject=${subject}&body=${body}`;
+
+  // Rediriger l'utilisateur vers le lien de messagerie
+  window.location.href = mailtoLink;
+}

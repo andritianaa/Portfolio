@@ -674,7 +674,7 @@
         </section>
         <section class="contact-form">
           <h3 class="h3 form-title">Contactez-moi</h3>
-          <form action="mailto:pro@andritiana.tech" class="form" method="post" data-form>
+          <form onsubmit="redirectToEmail(event)" class="form" data-form>
             <div class="input-wrapper"> <input type="text" name="fullname" class="form-input" placeholder="Nom complet"
                 required data-form-input> <input type="email" name="email" class="form-input"
                 placeholder="Adresse email" required data-form-input> </div> <textarea name="message" class="form-input"
