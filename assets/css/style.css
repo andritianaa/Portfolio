@@ -1787,18 +1787,36 @@ input {
   background-color: none;
 }
 
-img.left {
-  position: fixed;
-  bottom: 0;
-  right: -20px;
-  height: 400px;
-  z-index: -1;
-}
 
 img.right {
   position: fixed;
-  top: 0;
-  left: 0;
+  bottom: 0;
+  right: 0;
   height: 400px;
   z-index: -1;
+  transform: scaleX(-1);
+}
+
+img.center {
+  position: fixed;
+  top: 20px;
+  left: -40px;
+  height: 400px;
+  z-index: -1;
+  animation: float 4s ease-in-out infinite;
+  filter: drop-shadow(0 0 10px #ffff4c);
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-30px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }
