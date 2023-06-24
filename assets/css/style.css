@@ -8,8 +8,8 @@
   --text-gradient-blue: linear-gradient(to right, #1d4ed8, #1d4ed8);
   --jet: hsl(0, 0%, 22%);
   --onyx: hsl(240, 1%, 17%);
-  --eerie-black-1: hsla(240, 3%, 13%, 0.888);
-  --eerie-black-2: hsla(240, 2%, 12%, 0.888);
+  --eerie-black-1: hsla(240, 3%, 13%, 0.9);
+  --eerie-black-2: hsla(240, 2%, 12%, 0.9);
   --smoky-black: hsl(0, 0%, 7%);
   --white-1: hsl(0, 0%, 100%);
   --white-2: hsl(0, 0%, 98%);
