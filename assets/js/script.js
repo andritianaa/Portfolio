@@ -173,11 +173,9 @@ function submitForm(event) {
   };
 
   // Envoi de la requête POST à l'API
-  fetch('http://localhost:3000/messages', {
+  fetch('https://andritiana.tech/messages', {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data)
   })
     .then(response => response.json())
