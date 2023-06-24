@@ -431,7 +431,6 @@ main {
 
 .navbar-link {
   color: var(--light-gray);
-  font-size: var(--fs-8);
   padding: 20px 7px;
   transition: color var(--transition-1);
 }
@@ -1340,9 +1339,7 @@ textarea.form-input::-webkit-resizer {
     gap: 20px;
   }
 
-  .navbar-link {
-    --fs-8: 14px;
-  }
+
 
   .about .article-title {
     margin-bottom: 20px;
@@ -1522,10 +1519,6 @@ textarea.form-input::-webkit-resizer {
   .contacts-list {
     grid-template-columns: 1fr 1fr;
     gap: 30px 15px;
-  }
-
-  .navbar-link {
-    --fs-8: 15px;
   }
 
   .testimonials-modal {
@@ -1819,4 +1812,8 @@ img.center {
   100% {
     transform: translateY(0);
   }
+}
+
+body {
+  overflow: hidden !important;
 }
