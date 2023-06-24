@@ -1775,3 +1775,19 @@ textarea.form-input::-webkit-resizer {
 input {
   background-color: #1e1e1f;
 }
+
+img.left {
+  position: fixed;
+  bottom: 0;
+  right: -20px;
+  height: 400px;
+  z-index: -1;
+}
+
+img.right {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 400px;
+  z-index: -1;
+}
