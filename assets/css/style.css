@@ -1813,7 +1813,3 @@ img.center {
     transform: translateY(0);
   }
 }
-
-body {
-  overflow: hidden !important;
-}
